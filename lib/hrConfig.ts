@@ -1,80 +1,3 @@
-export const HR_TEAMS: Record<string, HRTeam> = {
-  leave: {
-    label: "Leave Management",
-    team: "Leave & Attendance",
-    color: "#10b981",
-    icon: "🌿",
-    email: "leave-team@company.com",
-    contact: "Sarah Mitchell",
-    avatar: "SM",
-  },
-  payroll: {
-    label: "Payroll & Compensation",
-    team: "Payroll Team",
-    color: "#f59e0b",
-    icon: "💰",
-    email: "payroll@company.com",
-    contact: "James Rivera",
-    avatar: "JR",
-  },
-  policy: {
-    label: "HR Policy",
-    team: "Policy & Compliance",
-    color: "#6366f1",
-    icon: "📋",
-    email: "hr-policy@company.com",
-    contact: "Anita Sharma",
-    avatar: "AS",
-  },
-  benefits: {
-    label: "Benefits & Insurance",
-    team: "Benefits Administration",
-    color: "#ec4899",
-    icon: "🏥",
-    email: "benefits@company.com",
-    contact: "Tom Chen",
-    avatar: "TC",
-  },
-  onboarding: {
-    label: "Onboarding",
-    team: "Talent & Onboarding",
-    color: "#14b8a6",
-    icon: "🚀",
-    email: "onboarding@company.com",
-    contact: "Priya Nair",
-    avatar: "PN",
-  },
-  performance: {
-    label: "Performance & Growth",
-    team: "People Development",
-    color: "#8b5cf6",
-    icon: "📈",
-    email: "people-dev@company.com",
-    contact: "David Okafor",
-    avatar: "DO",
-  },
-  grievance: {
-    label: "Grievance & Escalation",
-    team: "HR Business Partner",
-    color: "#ef4444",
-    icon: "🔔",
-    email: "hrbp@company.com",
-    contact: "Linda Walsh",
-    avatar: "LW",
-  },
-  general: {
-    label: "General Query",
-    team: "HR Operations",
-    color: "#64748b",
-    icon: "💬",
-    email: "hr-ops@company.com",
-    contact: "HR Operations",
-    avatar: "HR",
-  },
-};
-
-export const STATUS_FLOW = ["Open", "In Review", "Awaiting Info", "Resolved"];
-
 export interface HRTeam {
   label: string;
   team: string;
@@ -83,6 +6,9 @@ export interface HRTeam {
   email: string;
   contact: string;
   avatar: string;
+  selfService: boolean;
+  selfServiceLabel: string;
+  selfServiceUrl: string;
 }
 
 export interface Ticket {
@@ -111,6 +37,107 @@ export interface EmailEntry {
   mock: boolean;
 }
 
+export const STATUS_FLOW = ["Open", "In Review", "Awaiting Info", "Resolved"];
+
 export function generateTicketId(): string {
   return "HR-" + Math.random().toString(36).substring(2, 7).toUpperCase();
 }
+
+export const HR_TEAMS: Record<string, HRTeam> = {
+  leave: {
+    label: "Leave Management",
+    team: "Leave & Attendance",
+    color: "#10b981",
+    icon: "🌿",
+    email: "akshatawankhede9@gmail.com",
+    contact: "Sarah Mitchell",
+    avatar: "SM",
+    selfService: true,
+    selfServiceLabel: "Check Leave Balance on GreytHR",
+    selfServiceUrl: "https://greythr.com",
+  },
+  payroll: {
+    label: "Payroll & Compensation",
+    team: "Payroll Team",
+    color: "#f59e0b",
+    icon: "💰",
+    email: "akshatawankhede9@gmail.com",
+    contact: "James Rivera",
+    avatar: "JR",
+    selfService: true,
+    selfServiceLabel: "View Payslip on GreytHR",
+    selfServiceUrl: "https://greythr.com",
+  },
+  policy: {
+    label: "HR Policy",
+    team: "Policy & Compliance",
+    color: "#6366f1",
+    icon: "📋",
+    email: "akshatawankhede9@gmail.com",
+    contact: "Anita Sharma",
+    avatar: "AS",
+    selfService: true,
+    selfServiceLabel: "View HR Policies",
+    selfServiceUrl: "https://greythr.com",
+  },
+  benefits: {
+    label: "Benefits & Insurance",
+    team: "Benefits Administration",
+    color: "#ec4899",
+    icon: "🏥",
+    email: "akshatawankhede9@gmail.com",
+    contact: "Tom Chen",
+    avatar: "TC",
+    selfService: false,
+    selfServiceLabel: "",
+    selfServiceUrl: "",
+  },
+  onboarding: {
+    label: "Onboarding",
+    team: "Talent & Onboarding",
+    color: "#14b8a6",
+    icon: "🚀",
+    email: "akshatawankhede9@gmail.com",
+    contact: "Priya Nair",
+    avatar: "PN",
+    selfService: false,
+    selfServiceLabel: "",
+    selfServiceUrl: "",
+  },
+  performance: {
+    label: "Performance & Growth",
+    team: "People Development",
+    color: "#8b5cf6",
+    icon: "📈",
+    email: "akshatawankhede9@gmail.com",
+    contact: "David Okafor",
+    avatar: "DO",
+    selfService: false,
+    selfServiceLabel: "",
+    selfServiceUrl: "",
+  },
+  grievance: {
+    label: "Grievance & Escalation",
+    team: "HR Business Partner",
+    color: "#ef4444",
+    icon: "🔔",
+    email: "akshatawankhede9@gmail.com",
+    contact: "Linda Walsh",
+    avatar: "LW",
+    selfService: false,
+    selfServiceLabel: "",
+    selfServiceUrl: "",
+  },
+  general: {
+    label: "General Query",
+    team: "HR Operations",
+    color: "#64748b",
+    icon: "💬",
+    email: "akshatawankhede9@gmail.com",
+    contact: "Rahul Verma",
+    avatar: "RV",
+    selfService: false,
+    selfServiceLabel: "",
+    selfServiceUrl: "",
+  },
+};
